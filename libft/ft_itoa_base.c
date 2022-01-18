@@ -6,13 +6,13 @@
 /*   By: chaepark <chaepark@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 01:46:40 by chaepark          #+#    #+#             */
-/*   Updated: 2022/01/17 22:46:34 by chaepark         ###   ########.fr       */
+/*   Updated: 2022/01/18 01:47:50 by chaepark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	i_size(long long n, int base)
+static size_t	i_size(unsigned long n, int base)
 {
 	size_t	i;
 
@@ -24,7 +24,7 @@ static size_t	i_size(long long n, int base)
 		n = -n;
 		i++;
 	}
-	while (n > base - 1)
+	while (n > (unsigned long)base - 1)
 	{
 		i++;
 		n /= base;
@@ -34,10 +34,10 @@ static size_t	i_size(long long n, int base)
 
 char	*ft_itoa_base(unsigned long n, char *s)
 {
-	char		*str;
-	size_t		i;
-	long long	nbr;
-	int			base;
+	char			*str;
+	size_t			i;
+	unsigned long	nbr;
+	int				base;
 
 	base = ft_strlen(s);
 	nbr = n;

@@ -6,7 +6,7 @@
 /*   By: chaepark <chaepark@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 23:17:22 by chaepark          #+#    #+#             */
-/*   Updated: 2021/11/10 14:23:11 by chaepark         ###   ########.fr       */
+/*   Updated: 2022/01/18 00:55:12 by chaepark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	src_len = ft_strlen(src);
 	if (dstsize > 0)
 	{
-		while (src[i] && i + 1 < dstsize)
+		while (src && src[i] && i + 1 < dstsize)
 		{
 			dst[i] = src[i];
 			i++;

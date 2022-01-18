@@ -6,7 +6,7 @@
 /*   By: chaepark <chaepark@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 14:49:00 by chaepark          #+#    #+#             */
-/*   Updated: 2022/01/17 23:04:30 by chaepark         ###   ########.fr       */
+/*   Updated: 2022/01/18 10:37:03 by chaepark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,10 @@ void		ft_convert_s(t_format *fmt, t_store *st);
 void		ft_convert_p(t_format *fmt, t_store *st);
 
 //ft_convert_x.c
-void		ft_convert_x(t_format *fmt, t_store *st);
+void		ft_convert_lux(t_format *fmt, t_store *st, char *base);
+
+//ft_convert_X.c
+void		ft_convert_pct(t_store *st);
 
 //ft_add.c
 void		ft_add_left(char **arg, char pad, int width);

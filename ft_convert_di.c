@@ -6,14 +6,16 @@
 /*   By: chaepark <chaepark@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:25:35 by chaepark          #+#    #+#             */
-/*   Updated: 2022/01/17 17:28:52 by chaepark         ###   ########.fr       */
+/*   Updated: 2022/01/18 15:55:19 by chaepark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 // line28: precision은 0보다 크고, arg가 0이면 precision만큼 0으로 왼쪽패딩 채우면 됨
 // line28: precision 0, ary 0이면 아무것도 출력되지 않음, precision이 1이어야 0이 나옴
+// line37 : precision 0 이상인 경우 flag 0은 영향을 미치지 않고 width만큼 공백이 나온다.
 void	ft_convert_di(t_format *fmt, t_store *st)
 {
 	int	arg;
@@ -27,8 +29,12 @@ void	ft_convert_di(t_format *fmt, t_store *st)
 	if (st->precision > -1)
 	{
 		if (st->precision == 0 && arg == 0)
+		{
+			free(st->argument);
 			st->argument = ft_strdup("");
+		}
 		ft_add_left(&st->argument, '0', st->precision);
+		st->padding = ' ';
 	}
 	ft_convert_di_next(st, sign);
 	st->len = ft_strlen(st->argument);

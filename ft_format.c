@@ -6,7 +6,7 @@
 /*   By: chaepark <chaepark@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 23:07:12 by chaepark          #+#    #+#             */
-/*   Updated: 2022/01/17 20:46:45 by chaepark         ###   ########.fr       */
+/*   Updated: 2022/01/18 13:45:26 by chaepark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,8 @@ void	ft_precision(t_format *fmt, t_store *st)
 			while (ft_isdigit(fmt->format[fmt->i]))
 				precision = (precision * 10) + (fmt->format[fmt->i++] - '0');
 		}
+		else
+			precision = 0;
 	}
 	st->precision = precision;
 }

@@ -6,7 +6,7 @@
 /*   By: chaepark <chaepark@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 01:46:40 by chaepark          #+#    #+#             */
-/*   Updated: 2022/01/17 22:30:17 by chaepark         ###   ########.fr       */
+/*   Updated: 2022/01/18 14:05:42 by chaepark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,7 @@ static size_t	i_size(long long n)
 	if (n == 0)
 		return (1);
 	if (n < 0)
-	{
 		n = -n;
-		i++;
-	}
 	while (n > 9)
 	{
 		i++;
