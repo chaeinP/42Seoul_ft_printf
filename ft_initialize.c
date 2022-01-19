@@ -6,7 +6,7 @@
 /*   By: chaepark <chaepark@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 22:26:33 by chaepark          #+#    #+#             */
-/*   Updated: 2022/01/18 00:20:38 by chaepark         ###   ########.fr       */
+/*   Updated: 2022/01/19 12:57:13 by chaepark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ t_store	*ft_initialize_store(void)
 		return (0);
 	st->left_alignment = 0;
 	st->prefix = ft_strdup("");
+	if (!st->prefix)
+		return (0);
 	st->padding = ' ';
 	st->width = 0;
 	st->precision = -1;

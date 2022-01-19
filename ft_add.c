@@ -6,7 +6,7 @@
 /*   By: chaepark <chaepark@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 14:24:22 by chaepark          #+#    #+#             */
-/*   Updated: 2022/01/18 13:54:32 by chaepark         ###   ########.fr       */
+/*   Updated: 2022/01/20 00:41:56 by chaepark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,16 +75,20 @@ void	ft_add_prefix_x(t_store *st)
 	char	*temp;
 
 	temp = st->argument;
-	if (ft_strchr(st->prefix, '#'))
+	if (ft_strchr(st->prefix, '#') || st->type == 'p')
 	{
-		if (st->type == 'x')
+		if (st->type == 'x' || st->type == 'p')
 		{
 			st->argument = ft_strjoin("0x", temp);
+			if (!st->argument)
+				return ;
 			free(temp);
 		}
 		else if (st->type == 'X')
 		{
 			st->argument = ft_strjoin("0X", temp);
+			if (!st->argument)
+				return ;
 			free(temp);
 		}
 	}

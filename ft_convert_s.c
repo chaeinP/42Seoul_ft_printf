@@ -6,7 +6,7 @@
 /*   By: chaepark <chaepark@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 18:44:35 by chaepark          #+#    #+#             */
-/*   Updated: 2022/01/18 00:20:38 by chaepark         ###   ########.fr       */
+/*   Updated: 2022/01/20 01:30:09 by chaepark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ void	ft_convert_s(t_format *fmt, t_store *st)
 	else
 		len = ft_strlen(s);
 	st->argument = malloc(sizeof(char) * (len + 1));
+	if (!st->argument)
+		return ;
 	ft_strlcpy(st->argument, s, len + 1);
 	if (!st->left_alignment)
 		ft_add_left(&st->argument, ' ', st->width);

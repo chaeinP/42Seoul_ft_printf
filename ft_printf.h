@@ -6,7 +6,7 @@
 /*   By: chaepark <chaepark@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 14:49:00 by chaepark          #+#    #+#             */
-/*   Updated: 2022/01/18 10:37:03 by chaepark         ###   ########.fr       */
+/*   Updated: 2022/01/20 00:57:49 by chaepark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,6 @@ typedef struct s_format
 	size_t		i;
 	size_t		len;
 }				t_format;
-
-// prefix : #o => 08진수, #x => 0x16진수소문자, #X => 0x16진수대문자
-// padding : ' ', '0'
 
 typedef struct s_store
 {
@@ -71,9 +68,12 @@ void		ft_convert_s(t_format *fmt, t_store *st);
 
 //ft_convert_p.c
 void		ft_convert_p(t_format *fmt, t_store *st);
+void		ft_convert_p_next(t_store *st);
 
 //ft_convert_x.c
 void		ft_convert_lux(t_format *fmt, t_store *st, char *base);
+void		ft_convert_lux_next(t_store *st, unsigned int c);
+void		ft_convert_lux_next_prefix(t_store *st);
 
 //ft_convert_X.c
 void		ft_convert_pct(t_store *st);

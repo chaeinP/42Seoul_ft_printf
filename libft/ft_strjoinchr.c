@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_chrjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strjoinchr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chaepark <chaepark@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 11:56:52 by chaepark          #+#    #+#             */
-/*   Updated: 2022/01/17 11:58:08 by chaepark         ###   ########.fr       */
+/*   Updated: 2022/01/19 12:58:22 by chaepark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_chrjoin(char *s, char c)
+char	*ft_strjoinchr(char *s, char c)
 {
 	char	*str;
 	size_t	len;

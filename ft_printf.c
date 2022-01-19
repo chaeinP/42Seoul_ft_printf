@@ -6,7 +6,7 @@
 /*   By: chaepark <chaepark@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 15:14:44 by chaepark          #+#    #+#             */
-/*   Updated: 2022/01/18 00:20:38 by chaepark         ###   ########.fr       */
+/*   Updated: 2022/01/19 13:25:35 by chaepark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_print_in_conditions(t_format *fmt)
 
 	st = ft_initialize_store();
 	ft_format(fmt, st);
-	if (st->type)
+	if (st->type != '\0')
 	{
 		ft_type_conversion(fmt, st);
 		fmt->len += write(1, st->argument, st->len);

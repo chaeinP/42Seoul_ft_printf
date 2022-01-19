@@ -6,7 +6,7 @@
 /*   By: chaepark <chaepark@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 23:07:12 by chaepark          #+#    #+#             */
-/*   Updated: 2022/01/18 13:45:26 by chaepark         ###   ########.fr       */
+/*   Updated: 2022/01/20 01:18:41 by chaepark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@ void	*ft_format(t_format *fmt, t_store *st)
 	ft_width(fmt, st);
 	ft_precision(fmt, st);
 	ft_type(fmt, st);
+	if (ft_strchr("-0# +123456789*.", fmt->format[fmt->i]) \
+		&& st->type == '\0')
+		ft_format(fmt, st);
 	return (st);
 }
 
-//"-+ 0#"
 void	ft_flags(t_format *fmt, t_store *st)
 {
 	char	*tmp;
@@ -35,7 +37,9 @@ void	ft_flags(t_format *fmt, t_store *st)
 		else if (ft_strchr(" +#", c))
 		{
 			tmp = st->prefix;
-			st->prefix = ft_chrjoin(tmp, c);
+			st->prefix = ft_strjoinchr(tmp, c);
+			if (!st->prefix)
+				return ;
 			free(tmp);
 		}
 		else if (c == '0')
@@ -49,7 +53,7 @@ void	ft_width(t_format *fmt, t_store *st)
 	int		width;
 	char	c;
 
-	width = 0;
+	width = st->width;
 	c = fmt->format[fmt->i];
 	if (c == '*')
 	{
@@ -74,7 +78,7 @@ void	ft_precision(t_format *fmt, t_store *st)
 	int		precision;
 	char	c;
 
-	precision = -1;
+	precision = st->precision;
 	if (fmt->format[fmt->i] == '.')
 	{
 		fmt->i++;
