@@ -6,7 +6,7 @@
 /*   By: chaepark <chaepark@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 23:07:12 by chaepark          #+#    #+#             */
-/*   Updated: 2022/01/20 01:18:41 by chaepark         ###   ########.fr       */
+/*   Updated: 2022/02/04 23:00:20 by chaepark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	ft_width(t_format *fmt, t_store *st)
 	int		width;
 	char	c;
 
-	width = st->width;
+	width = 0;
 	c = fmt->format[fmt->i];
 	if (c == '*')
 	{
@@ -78,7 +78,7 @@ void	ft_precision(t_format *fmt, t_store *st)
 	int		precision;
 	char	c;
 
-	precision = st->precision;
+	precision = 0;
 	if (fmt->format[fmt->i] == '.')
 	{
 		fmt->i++;
